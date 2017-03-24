@@ -16,3 +16,10 @@ function OpenInEmacs()
   exec "silent !emacsclient -c " . expand("%:p") . "&"
   redraw!
 endfun
+
+" Trim the trailing whitespaces in the current buffer
+function TrimWhitespace()
+    let l:save = winsaveview()
+    %s/\s\+$//e
+    call winrestview(l:save)
+endfun
