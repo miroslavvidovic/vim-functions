@@ -17,6 +17,12 @@ function OpenInEmacs()
   redraw!
 endfun
 
+" Open the current file in firefox
+function Firefox()
+  exec "silent !firefox &> /dev/null 2>&1 " . expand("%") . "&"
+  redraw!
+endfun
+
 " Trim the trailing whitespaces in the current buffer
 function TrimWhitespace()
     let l:save = winsaveview()
