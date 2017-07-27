@@ -1,4 +1,4 @@
-" Search zeal based on the filetyp and the word under the cursor
+" Search Zeal documentation based on the filetype and the word under the cursor
 function OpenInZeal()
   let type = &filetype
   if type == "sh"
@@ -10,7 +10,7 @@ function OpenInZeal()
   redraw!
 endfun
 
-" Functions assumes that the emacs is running in daemon mode
+" Function assumes that emacs is running in daemon mode
 " Open the current file in emacs client
 function OpenInEmacs()
   exec "silent !emacsclient -c " . expand("%:p") . "&"
