@@ -29,3 +29,14 @@ function TrimWhitespace()
     %s/\s\+$//e
     call winrestview(l:save)
 endfun
+
+" Clear all registers
+function ClearRegisters()
+  let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"'
+  let i=0 
+  while (i<strlen(regs))
+    exec 'let @'.regs[i].'=""' 
+    let i=i+1 
+  endwhile 
+  unlet regs
+endfun
